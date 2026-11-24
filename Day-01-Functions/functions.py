@@ -19,7 +19,7 @@ def sub (x,y):
     return x-y
 def divide (x,y):
     if(y==0):
-        return ("return "Please enter a non-zero value for y")
+        return "Please enter a non-zero value for y"
     else:
         return x/y
 
@@ -86,18 +86,18 @@ shipping_label("Dr.", "Spongebob", "Squarepants",
 # 3. Lambda Functions
 # =========================
 
-add = lambda x, y: x + y
+add_lambda = lambda x, y: x + y
 print(add(10, 5))
 
-squeard = lambda x : x*x
-print(squeard(8))
+squared = lambda x : x*x
+print(squared(8))
 
 return_num = lambda x , y : x if(x>y) else y    
 print(return_num(10,20))
 
-return_nums = lambda x : True if(x>0) else False
-print(return_nums(5))
-print(return_nums(-3))
+is_positive = lambda x : True if(x>0) else False
+print(is_positive(5))
+print(is_positive(-3))
 
 
 # =========================
@@ -116,5 +116,26 @@ even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
 print(even_numbers)
 
 nums = [12, 5, 20, 3, 15, 8, 30, 7]
-bigThann10 = list(filter(lambda x : x>10 , nums))
-print(bigThann10)
+numbers_greater_than_10 = list(filter(lambda x : x>10 , nums))
+print(numbers_greater_than_10)
+
+
+# =========================
+# 5. Combined Map and Filter
+# =========================
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+even_numbers_squared = list(
+    map(
+        lambda x: x ** 2,
+        filter(lambda x: x % 2 == 0, numbers)
+    )
+)
+
+print(even_numbers_squared)
+
+
+# =========================
+# End of Day 1
+# =========================
